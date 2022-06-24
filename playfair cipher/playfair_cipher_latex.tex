@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Cryptography Lab - Assignment 3}
+\author{Vipul Panchal - 2021PIS5123}
+\date{7 December 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Pseudocode for Playfair Cipher:}
+
+\begin{enumerate}
+    \item 6X6 Key-matrix Generation:
+    \begin{itemize}
+        \item Write the letters of the key without repetition followed by remaining letters in alphabetical order then followed by digits.
+    \end{itemize}
+    \item Encryption of the given plain-text:
+    \begin{itemize}
+        \item Make the length of plain-text even by appending "x".
+        \item Divide plain-text into pairs of two letters.
+        \item If both letters are same in a pair then insert "x" after the first letter.
+        \item Now take the key-matrix and the plain-text and encode each of plain-text pair according to the following rules:
+        \begin{itemize}
+            \item If both letters are in same row select the values to the right of both and if at the right-most position, then wrap around.
+            \item If both letter are in same column select the values at the bottom of both, and if at the bottom-most position, then wrap around  
+            \item Else form a grid as the letter pair as the opposite corners and select values at the opposite end
+        \end{itemize}
+    \end{itemize}
+    
+    \item Decryption of the given cipher-text:
+    \begin{itemize}
+        \item Divide cipher-text into pairs of two letters and perform the following operations on each pair.
+        \begin{itemize}
+            \item If both letter are in same row select the values to the right of both else wrap around  
+            \item If both letter are in same column select the values at the bottom of both else wrap around  
+            \item Else take the grid which is formed by the two letters and select values at the opposite end
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
+
+\end{document}
